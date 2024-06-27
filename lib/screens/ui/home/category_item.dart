@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:t2208a_flutter/model/category_model.dart';
 
 class CategoryItem extends StatelessWidget{
-    const CategoryItem({super.key});
+  final Category category;
+  const CategoryItem({required this.category});
 
     @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class CategoryItem extends StatelessWidget{
                 width: 150,
               height: 120,
            ),
-           Text("Fruits")
+           Text(category.name)
          ],
       );
   }
