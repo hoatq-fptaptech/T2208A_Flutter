@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:t2208a_flutter/bloc/bloc.dart';
 import 'package:t2208a_flutter/my_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider( // create global state
+        create: (_)=> Bloc(),
+        child: MyApp(),
+    )
+  );
 }
 
 class MyApp extends StatelessWidget {
