@@ -37,7 +37,15 @@ class _HomeProductState extends State<HomeProduct>{
         "email":"quanghoa@gmail.com",
         "password":"12345678"
       };
-      Response response = await Dio().post(url,data: data);
+      Response response = await Dio().post(url,
+        data: data,
+        options: Options(
+          headers: {
+          'Content-Type': 'application/json', // Đặt Content-Type là application/json
+          'Authorization': 'Bearer your_jwt_token', // Nếu cần JWT token
+          },
+        ),
+      );
       LoginRes lg = LoginRes.fromJson(response.data);
       final bloc = Provider.of<Bloc>(context, listen: false);
       bloc.loadToken(lg.token);
