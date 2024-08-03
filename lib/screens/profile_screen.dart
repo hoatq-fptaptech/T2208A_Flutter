@@ -7,7 +7,6 @@ class ProfileScreen extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    String jwt = Provider.of<Bloc>(context,listen: false).loadJwt??"";
-    return Text("Profile Screen monitor.." + jwt);
+    return Text("Profile Screen monitor..");
   }
 }

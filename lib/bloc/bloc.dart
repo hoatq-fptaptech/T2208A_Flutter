@@ -7,7 +7,8 @@ class Bloc extends ChangeNotifier{
     String? _jwt ;
   // tạo 1 stream để get data từ state
     Stream<List<CartItem>> get cartItemsStream => Stream.value(_cartItems);
-    String? get loadJwt => _jwt;
+    String? get getToken => _jwt;
+
     void addToCart(CartItem item){
         _cartItems.add(item); // chưa check sp đã có trong giỏ hay chưa?
         notifyListeners();

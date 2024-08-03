@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:t2208a_flutter/bloc/bloc.dart';
 import 'package:t2208a_flutter/my_page.dart';
+import 'package:t2208a_flutter/screens/login_screen.dart';
 
 void main() {
   runApp(
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyPage(),
+      home: const LoginScreen(),
     );
   }
 }

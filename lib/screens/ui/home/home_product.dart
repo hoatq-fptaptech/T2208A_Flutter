@@ -1,7 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:t2208a_flutter/bloc/bloc.dart';
 import 'package:t2208a_flutter/model/product_model.dart';
 import 'package:t2208a_flutter/model/products_res.dart';
 import 'package:t2208a_flutter/screens/ui/home/product_item.dart';
@@ -30,36 +28,11 @@ class _HomeProductState extends State<HomeProduct>{
     }
   }
 
-  Future<void> _login() async{
-    try{
-      const url = "http://localhost:8080/auth/login";
-      final Map<String, dynamic> data = {
-        "email":"quanghoa@gmail.com",
-        "password":"12345678"
-      };
-      Response response = await Dio().post(url,
-        data: data,
-        options: Options(
-          headers: {
-          'Content-Type': 'application/json', // Đặt Content-Type là application/json
-          'Authorization': 'Bearer your_jwt_token', // Nếu cần JWT token
-          },
-        ),
-      );
-      LoginRes lg = LoginRes.fromJson(response.data);
-      final bloc = Provider.of<Bloc>(context, listen: false);
-      bloc.loadToken(lg.token);
-      print(lg);
-    }catch(e){
-      print(e);
-    }
-  }
 
   @override
   void initState() {
     super.initState();
     _getProduct();
-    _login();
   }
 
   @override

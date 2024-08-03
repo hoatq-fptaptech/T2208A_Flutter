@@ -29,14 +29,3 @@ class ProductModel {
     thumbnail = json['thumbnail']??"";
   }
 }
-
-class LoginRes{
-  late String token;
-  late int expiresIn;
-
-  LoginRes(this.token, this.expiresIn);
-  LoginRes.fromJson(Map<String, dynamic> json) {
-    token = json["token"]??"";
-    expiresIn = json["expiresIn"]??0;
-  }
-}
