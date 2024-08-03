@@ -7,7 +7,7 @@ class Bloc extends ChangeNotifier{
     String? _jwt ;
   // tạo 1 stream để get data từ state
     Stream<List<CartItem>> get cartItemsStream => Stream.value(_cartItems);
-
+    String? get loadJwt => _jwt;
     void addToCart(CartItem item){
         _cartItems.add(item); // chưa check sp đã có trong giỏ hay chưa?
         notifyListeners();
@@ -15,6 +15,11 @@ class Bloc extends ChangeNotifier{
 
     void removeCart(int itemId){
         _cartItems.removeWhere((element) => element.id == itemId);
+        notifyListeners();
+    }
+
+    void loadToken(String token){
+        _jwt = token;
         notifyListeners();
     }
 }

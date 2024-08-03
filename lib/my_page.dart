@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:t2208a_flutter/screens/cart_screen.dart';
 import 'package:t2208a_flutter/screens/home_screen.dart';
+import 'package:t2208a_flutter/screens/profile_screen.dart';
 import 'package:t2208a_flutter/screens/search_screen.dart';
 
 class MyPage extends StatefulWidget{
@@ -14,7 +15,8 @@ class _MyPageState extends State<MyPage>{
   final List<Widget> screens = [
     HomeScreen(),
     SearchScreen(),
-    CartScreen()
+    CartScreen(),
+    ProfileScreen()
   ];
   int _selectedIndex = 0;
 
